@@ -1,0 +1,17 @@
+# Data files
+*.csv
+*.parquet
+
+# Python
+__pycache__/
+*.pyc
+
+# Virtual environment
+.venv/
+venv/
+
+# IDE
+.vscode/
+
+# Logs
+*.log

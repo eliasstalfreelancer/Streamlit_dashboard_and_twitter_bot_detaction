@@ -1,0 +1,31 @@
+{
+    "dataset": {
+        "total_accounts": 1982,
+        "total_features": 21,
+        "training_accounts": 1585,
+        "test_accounts": 397
+    },
+    "dummy_baseline": {
+        "accuracy": 0.4987405541561713,
+        "precision": 0.4987405541561713,
+        "recall": 1.0,
+        "f1": 0.6655462184873949
+    },
+    "cross_validation": {
+        "accuracy_mean": 0.9798107255520504,
+        "accuracy_std": 0.008604531039107794,
+        "precision_mean": 0.989742531917812,
+        "precision_std": 0.00864778715032411,
+        "recall_mean": 0.969739670408407,
+        "recall_std": 0.010810713513657328,
+        "f1_mean": 0.979617086464153,
+        "f1_std": 0.008656425126835189
+    },
+    "random_forest": {
+        "train_accuracy": 1.0,
+        "test_accuracy": 0.9848866498740554,
+        "precision": 0.98,
+        "recall": 0.98989898989899,
+        "f1": 0.9849246231155779
+    }
+}
