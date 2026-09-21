@@ -8,52 +8,117 @@ The application uses a Random Forest model trained on the Cresci-2017 Twitter bo
 
 ---
 
-## How to run the project
+## Dataset Setup
+
+The dataset is not included in this GitHub repository because the raw
+Cresci-2017 data is too large to store directly in the repository.
+
+This project uses the **Cresci-2017 Twitter Bot Dataset**.
+
+### 1. Download the dataset
+
+Download Cresci-2017 from the Keggle:
+
+https://www.kaggle.com/datasets/hashemalsalmi/cresci-2017/data
+
+Press Zip download and create an account if need be.
+
+### 2. Extract the dataset
+
+After downloading the archive, extract it.
+
+This project only uses the following two subsets:
+
+- `genuine_accounts`
+- `social_spambots_1`
+
+Each subset contains:
+
+- `users.csv`
+- `tweets.csv`
+
+### 3. Place the files in the project
+
+Create the following folder structure:
+
+Fördjupning_python/
+│
+└── data/
+    └── raw/
+        ├── genuine_accounts/
+        │   ├── users.csv
+        │   └── tweets.csv
+        │
+        └── social_spambots_1/
+            ├── users.csv
+            └── tweets.csv
+
+The final paths should therefore be:
+
+data/raw/genuine_accounts/users.csv
+data/raw/genuine_accounts/tweets.csv
+
+data/raw/social_spambots_1/users.csv
+data/raw/social_spambots_1/tweets.csv
+
+Only these four CSV files are required for this project.
+
+---
+
+## How to Run the Project
 
 ### 1. Create a virtual environment
+
+Windows:
 
 python -m venv .venv
 
 ### 2. Activate the virtual environment
 
-Windows:
-
 .venv\Scripts\activate
 
-### 3. Install dependencies
+### 3. Install the dependencies
 
 pip install -r requirements.txt
 
-### 4. Run the backend pipeline
+### 4. Download and prepare the dataset
 
-Before starting the Streamlit application, run:
+Download the Cresci-2017 dataset using the instructions above and make
+sure the following files exist:
 
-python backend.py
+data/raw/genuine_accounts/users.csv
+data/raw/genuine_accounts/tweets.csv
+data/raw/social_spambots_1/users.csv
+data/raw/social_spambots_1/tweets.csv
 
-The backend pipeline:
+### 5. Run the backend pipeline
 
-- loads the raw datasets
-- preprocesses the data
-- creates EDA artifacts
-- balances the account dataset
-- aggregates tweet behaviour
-- trains the machine learning model
-- saves the trained model and model results
+python main.py
 
-Processed datasets are stored as checkpoints, so completed processing steps do not need to be repeated every time the pipeline is executed.
+The backend pipeline will:
 
-### 5. Start the Streamlit application
+- load the raw Cresci-2017 data
+- preprocess the user and tweet datasets
+- handle missing values
+- balance the account classes
+- aggregate tweet behaviour per account
+- create visualisation artifacts
+- create the final model dataset
+- train the Random Forest model
+- save the trained model and evaluation results
 
-After the backend pipeline has completed, run:
+Processed data is stored locally as checkpoints so that completed
+processing steps do not need to be repeated unnecessarily.
+
+### 6. Start the Streamlit application
+
+After the backend pipeline has finished successfully, run:
 
 streamlit run app.py
 
-Streamlit will start a local web server.
-
-The application can normally be opened at:
+Streamlit will normally start the application at:
 
 http://localhost:8501
-
 ---
 
 ## Project structure
