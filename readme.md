@@ -123,7 +123,7 @@ http://localhost:8501
 ---
 
 ## Project structure
-
+```text
 Fördjupning_python/
 │
 ├── app.py
@@ -157,7 +157,7 @@ Fördjupning_python/
 │
 ├── requirements.txt
 └── README.md
-
+```
 ---
 
 ## Application
