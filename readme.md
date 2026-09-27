@@ -41,6 +41,7 @@ Each subset contains:
 
 Create the following folder structure:
 
+```text
 Fördjupning_python/
 │
 └── data/
@@ -52,7 +53,7 @@ Fördjupning_python/
         └── social_spambots_1/
             ├── users.csv
             └── tweets.csv
-
+```
 The final paths should therefore be:
 
 data/raw/genuine_accounts/users.csv
